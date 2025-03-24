@@ -15,7 +15,7 @@ class Subject extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'course_name',
+        'course_id',
         'subject_name',
         'credits'
     ];

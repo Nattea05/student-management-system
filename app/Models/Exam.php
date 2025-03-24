@@ -14,14 +14,14 @@ class Exam extends Model
 
     protected $fillable = [
         'student_id',
-        'subject_name',
+        'subject_id',
         'date',
         'marks_obtained',
         'intake',
     ];
 
     protected $casts = [
-        'exam_date' => 'date',
+        'date' => 'date',
         'marks_obtained' => 'decimal:2',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',

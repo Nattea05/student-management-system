@@ -17,9 +17,9 @@ class Student extends Model
 
     // Define the fields that are mass assignable
     protected $fillable = [
-        'course_name',
         'first_name',
         'last_name',
+        'course_id',
         'date_of_birth',
         'gender',
         'email',
