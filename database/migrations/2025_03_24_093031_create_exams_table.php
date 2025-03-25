@@ -17,9 +17,8 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->foreignIdFor(Student::class);
             $table->foreignIdFor(Subject::class);
-            $table->date('date');
+            $table->dateTime('date');
             $table->decimal('marks_obtained', 3, 2);
-            $table->date('intake');
             $table->timestamps();
         });
     }

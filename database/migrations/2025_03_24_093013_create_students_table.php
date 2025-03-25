@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('first_name', 50);
             $table->string('last_name', 50);
             $table->foreignIdFor(Course::class);
-            $table->date('date_of_birth');
+            $table->dateTime('date_of_birth');
             $table->enum('gender', ['Male', 'Female', 'Other']);
             $table->string('email', 100)->unique();
             $table->string('phone_number', 15)->nullable();
@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('country', 100)->nullable();
             $table->boolean('is_international');
             $table->enum('status', ['Active', 'Inactive', 'Graduated', 'Suspended']);
-            $table->date('intake');
+            $table->dateTime('intake');
             $table->timestamps();
         });
     }

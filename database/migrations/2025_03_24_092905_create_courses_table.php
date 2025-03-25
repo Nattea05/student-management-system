@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->enum('department', ['Engineering & Technology', 'Business', 'Art']);
             $table->string('course_name');
-            $table->enum('duration', ['3 Years', '4 Years', '5 Years']);
+            $table->enum('duration', ['2 Years', '3 Years', '4 Years', '5 Years']);
             $table->integer('total_credits');
             $table->timestamps();
         });
