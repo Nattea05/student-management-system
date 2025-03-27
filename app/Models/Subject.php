@@ -30,7 +30,7 @@ class Subject extends Model
     // Defining one to many inverse (belongs to) with Course
     public function course(): BelongsTo
     {
-        return $this -> belongsTo(Course::class, 'course_id', 'course_name');
+        return $this -> belongsTo(Course::class);
     }
 
     public function students(): BelongsToMany

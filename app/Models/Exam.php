@@ -31,7 +31,7 @@ class Exam extends Model
 
     public function subject(): BelongsTo
     {
-        return $this -> belongsTo(Subject::class, 'subject_id', 'subject_name');
+        return $this -> belongsTo(Subject::class);
     }
 
     public function student(): BelongsTo

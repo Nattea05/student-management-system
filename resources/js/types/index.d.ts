@@ -40,3 +40,35 @@ export interface User {
     updated_at: string;
     [key: string]: unknown; // This allows for additional properties...
 }
+
+interface Student {
+    id: string;
+    first_name: string;
+    last_name: string;
+    course_id?: string;
+    course_name: string;
+    date_of_birth: string | Date;
+    gender: 'Male' | 'Female' | 'Other';
+    email: string;
+    phone_number: string | null;
+    address: string | null;
+    city: string | null;
+    state: string | null;
+    postal_code: string | null;
+    country: string;
+    is_international: boolean;
+    status: 'Active' | 'Inactive' | 'Graduated' | 'Suspended';
+    intake: string | Date;
+    created_at: string | Date;
+    updated_at: string | Date;
+}
+
+interface Course {
+    id: string;
+    department: string;
+    course_name: string;
+    duration: string;
+    total_credits: number;
+    created_at: string | Date;
+    updated_at: string | Date;
+}
