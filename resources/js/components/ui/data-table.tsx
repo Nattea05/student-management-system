@@ -36,7 +36,7 @@ interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[]
     data: TData[]
     filter_column: string
-    title: string
+    title?: string
 }
 
 export function DataTable<TData, TValue>({
@@ -110,9 +110,11 @@ export function DataTable<TData, TValue>({
                             })}
                     </DropdownMenuContent>
                 </DropdownMenu>
-                <Button onClick={() => router.get(route(`${title}s.create`))}>
-                    Create {title}
-                </Button>
+                {title &&
+                    <Button onClick={() => router.get(route(`${title}s.create`))}>
+                        Create {title}
+                    </Button>
+                }
             </div>
             <div className="rounded-md border">
                 <Table>

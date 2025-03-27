@@ -54,8 +54,8 @@ class Student extends Model
         return $this -> belongstoMany(Subject::class);
     }
 
-    public function exams(): HasMany
+    public function reports(): HasMany
     {
-        return $this -> hasMany(Exam::class);
+        return $this -> hasMany(Report::class);
     }
 }

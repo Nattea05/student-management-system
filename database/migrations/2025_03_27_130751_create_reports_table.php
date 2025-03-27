@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\Course;
-use App\Models\Subject;
+use App\Models\Exam;
+use App\Models\Student;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('exams', function (Blueprint $table) {
+        Schema::create('reports', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->foreignIdFor(Course::class);
-            $table->foreignIdFor(Subject::class);
-            $table->dateTime('date');
+            $table->foreignIdFor(Exam::class);
+            $table->foreignIdFor(Student::class);
+            $table->decimal('marks_obtained', 3, 2);
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('exams');
+        Schema::dropIfExists('reports');
     }
 };

@@ -35,4 +35,9 @@ class Course extends Model
     {
         return $this -> hasMany(Student::class);
     }
+
+    public function exams(): HasMany
+    {
+        return $this -> hasMany(Exam::class);
+    }
 }

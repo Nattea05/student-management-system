@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\Student;
 use App\Models\Subject;
+use App\Models\Course;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -19,15 +19,14 @@ class ExamFactory extends Factory
      */
     public function definition(): array
     {
-        $student = Student::inRandomOrder()->first();
         $subject = Subject::inRandomOrder()->first();
+        $course = Course::find($subject->course_id);
 
         return [
             'id' => Str::uuid(),
-            'student_id' => $student->id,
+            'course_id' => $course->id,
             'subject_id' => $subject->id,
             'date' => $this->faker->dateTimeThisYear('+2 months'),
-            'marks_obtained' => $this->faker->randomFloat(2, 0, 1),
             'created_at' => now(),
             'updated_at' => now(),
         ];

@@ -72,3 +72,47 @@ interface Course {
     created_at: string | Date;
     updated_at: string | Date;
 }
+
+interface Subject {
+    id: string;
+    course_id?: string;
+    course_name: string;
+    subject_name: string;
+    credits: number;
+    created_at: string | Date;
+    updated_at: string | Date;
+}
+
+interface Exam {
+    id: string;
+    course_id?: string;
+    course_name: string;
+    subject_id?: string;
+    subject_name: string;
+    date: string | Date;
+    created_at: string | Date;
+    updated_at: string | Date;
+}
+
+interface Report {
+    id: string;
+    exam_id: string;
+    student_id: string;
+    marks_obtained: number;
+    created_at: string | Date;
+    updated_at: string | Date;
+}
+
+interface SubjectAverage {
+    subject_id: string;
+    subject_name: string;
+    course_name: string;
+    average_marks: number;
+}
+
+interface StudentAverage {
+    student_id: string;
+    first_name: string;
+    last_name: string;
+    average_marks: number;
+}

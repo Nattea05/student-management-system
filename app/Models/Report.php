@@ -2,14 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Exam extends Model
+class Report extends Model
 {
     use HasUuids;
     use HasFactory;
@@ -17,29 +16,24 @@ class Exam extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'course_id',
-        'subject_id',
-        'date',
+        'exam_id',
+        'student_id',
+        'marks_obtained',
     ];
 
     protected $casts = [
-        'date' => 'date',
+        'marks_obtained' => 'decimal:2',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
     ];
 
-    public function subject(): BelongsTo
+    public function exams(): BelongsToMany
     {
-        return $this -> belongsTo(Subject::class);
+        return $this -> belongsToMany(Exam::class);
     }
 
-    public function course(): BelongsTo
+    public function student(): BelongsTo
     {
-        return $this -> belongsTo(Course::class);
-    }
-
-    public function reports(): HasMany
-    {
-        return $this -> hasMany(Report::class);
+        return $this -> belongsto(Student::class);
     }
 }

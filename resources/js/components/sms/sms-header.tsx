@@ -10,7 +10,7 @@ import { useInitials } from '@/hooks/use-initials';
 import { cn } from '@/lib/utils';
 import { type BreadcrumbItem, type NavItem, type SharedData } from '@/types';
 import { Link, usePage } from '@inertiajs/react';
-import { Menu, Users, LibraryBig, School, ChartLine } from 'lucide-react';
+import { Menu, Users, LibraryBig, School, ChartLine, BookOpen } from 'lucide-react';
 import AppLogo from '../app-logo';
 import AppLogoIcon from '../app-logo-icon';
 
@@ -22,17 +22,22 @@ const mainNavItems: NavItem[] = [
     },
     {
         title: 'Courses',
-        href: '/courses',
+        href: '/courses/courses',
         icon: LibraryBig,
     },
     {
+        title: 'Subjects',
+        href: '/subjects/subjects',
+        icon: BookOpen,
+    },
+    {
         title: 'Exams',
-        href: '/exams',
+        href: '/exams/exams',
         icon: School,
     },
     {
         title: 'Reports',
-        href: '/reports',
+        href: '/reports/subjects',
         icon: ChartLine,
     },
 ];
