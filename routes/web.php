@@ -8,6 +8,10 @@ Route::get('/', function () {
 })->name('home');
 
 Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/', function () {
+        return to_route('sms-dashboard');
+    });
+
     Route::get('sms-dashboard', function () {
         return Inertia::render('sms-dashboard');
     })->name('sms-dashboard');
